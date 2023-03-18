@@ -1,0 +1,43 @@
+ip:
+  # query_urls is a list of URLs
+  # used to query the external IP address.
+  query_urls:
+    - https://ipinfo.io/ip
+    - https://icanhazip.com
+    - https://checkip.amazonaws.com/
+    - https://myexternalip.com/raw
+    - https://ifconfig.me/ip
+
+  # interval is a cron expression
+  # used to schedule the IP address query
+  # at regular intervals.
+  # Example
+  # Every minute: 0 * * * * *
+  # Every 5 minutes: 0 */5 * * * *
+  interval: "0 * * * * *"
+
+
+email:
+  # smtp_host is the hostname or IP address
+  # of the SMTP server used to send emails.
+  smtp_host: mail.example.com
+
+  # smtp_port is the port number of the SMTP server.
+  smtp_port: 25
+
+  # smtp_user is the username used to authenticate
+  # with the SMTP server.
+  smtp_user: sender@example.com
+
+  # smtp_passwd is the password used to authenticate
+  # with the SMTP server.
+  smtp_passwd: passwd
+
+  # from is the email address of the sender.
+  from: sender@example.com
+
+  # to is a list of email addresses
+  # to send the notifications to.
+  to:
+    - recipient1@example.com
+    - recipient2@example.com
