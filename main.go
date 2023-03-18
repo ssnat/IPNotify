@@ -23,7 +23,19 @@ func main() {
 			lib.Logger.Error(err)
 			return
 		}
-		err = lib.SendEmail(ip, originIP)
+
+		if ip == originIP {
+			lib.Logger.Info("IP address remains unchanged.")
+			lib.Logger.Info("Scheduled task has completed.")
+			return
+		}
+
+		if originIP == "" {
+			err = lib.SendStartupEmail(ip)
+		} else {
+			err = lib.SendIPChangeEmail(ip, originIP)
+		}
+
 		if err != nil {
 			lib.Logger.Error(err)
 			return
@@ -39,5 +51,6 @@ func main() {
 	}
 	crontab.Start()
 	lib.Logger.Info(fmt.Sprintf("Scheduled task [%s] has been started.", config.Ip.Interval))
+
 	select {}
 }

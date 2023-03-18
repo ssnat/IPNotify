@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"regexp"
 )
 
 func GetIPv4() (string, error) {
@@ -40,5 +41,18 @@ func GetIPv4ByUrl(url string) (string, error) {
 		}
 	}(resp.Body)
 	content, err := io.ReadAll(resp.Body)
-	return string(content), nil
+	ip := string(content)
+	err = CheckIPv4Format(ip)
+	if err != nil {
+		return "", err
+	}
+	return ip, nil
+}
+
+func CheckIPv4Format(ip string) error {
+	reg := regexp.MustCompile(`^((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)$`)
+	if !reg.MatchString(ip) {
+		return errors.New(fmt.Sprintf("Invalid IPv4 address format."))
+	}
+	return nil
 }
