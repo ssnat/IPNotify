@@ -21,16 +21,6 @@ You can install IPNotify by compiling the source code, deploying it with Docker,
 2.  `cd IPNotify`
 3.  `go build .`
 
-#### Deploy with Docker
-
-The Docker image can be pulled using the following command:
-
-bash
-
-```bash
-docker pull pxgo/ipnotify
-```
-
 #### Download pre-compiled binary
 
 Download the binary for your OS from the [releases page](https://github.com/PxGo/IPNotify/releases).
