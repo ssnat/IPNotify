@@ -41,3 +41,16 @@ email:
   to:
     - recipient1@example.com
     - recipient2@example.com
+
+ddns:
+  dnspod:
+    enabled: false
+    login_token: "login token"
+    domain_id: "domain id"
+    records:
+      - 
+        record_id: "record id"
+        sub_domain: "wwww"
+        record_type: "A"
+        record_line: "默认"
+        ttl: 600
