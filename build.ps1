@@ -2,10 +2,10 @@ $version = $args[0]
 
 $dir = "./build/v$version"
 
-$linuxArm64Dir = $dir + "/IPNotify-linux-arm64"
-$linuxAmd64Dir = $dir + "/IPNotify-linux-amd64"
-$windowsArm64Dir = $dir + "/IPNotify-windows-arm64"
-$windowsAmd64Dir = $dir + "/IPNotify-windows-amd64"
+$linuxArm64Dir = $dir + "/IPNotify-linux-arm64-v" + $version
+$linuxAmd64Dir = $dir + "/IPNotify-linux-amd64-v" + $version
+$windowsArm64Dir = $dir + "/IPNotify-windows-arm64-v" + $version
+$windowsAmd64Dir = $dir + "/IPNotify-windows-amd64-v" + $version
 
 
 $linuxArm64Path = $linuxArm64Dir + "/IPNotify"
