@@ -40,6 +40,14 @@ func main() {
 			lib.Logger.Error(err)
 			return
 		}
+
+		err = lib.UpdateDNSPodRecords(ip)
+
+		if err != nil {
+			lib.Logger.Error(err)
+			return
+		}
+
 		originIP = ip
 
 		lib.Logger.Info("Scheduled task has completed.")

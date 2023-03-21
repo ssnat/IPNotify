@@ -22,9 +22,27 @@ type IEmailConfig struct {
 	To         []string `yaml:"to"`
 }
 
+type IDNSPodConfig struct {
+	Enabled    bool   `yaml:"enabled"`
+	LoginToken string `yaml:"login_token"`
+	Records    []struct {
+		DomainId   string `yaml:"domain_id"`
+		RecordId   string `yaml:"record_id"`
+		SubDomain  string `yaml:"sub_domain"`
+		RecordType string `yaml:"record_type"`
+		RecordLine string `yaml:"record_line"`
+		TTL        int
+	} `yaml:"records"`
+}
+
+type IDDNSConfig struct {
+	DNSPod IDNSPodConfig `yaml:"DNSPod"`
+}
+
 type IConfig struct {
 	Ip    IIPConfig    `yaml:"ip"`
 	Email IEmailConfig `yaml:"email"`
+	DDNS  IDDNSConfig  `yaml:"DDNS"`
 }
 
 var Config *IConfig = nil
