@@ -1,9 +1,7 @@
 IPNotify
 ========
 
-IPNotify is an open-source tool that monitors IPv4 address changes and sends email notifications in real-time. It's ideal for anyone who needs to stay informed about network changes and wants a simple, efficient way to receive alerts.
-
-In addition to email notifications, IPNotify now also supports Dynamic DNS (DDNS) updates with DNSPod. DDNS allows you to automatically update DNS records for a given domain and subdomain, eliminating the need for manual updates when your IP address changes.
+IPNotify is a simple and powerful open-source tool that monitors your network for IPv4 address changes and sends real-time email notifications. With support for Dynamic DNS updates with DNSPod and Cloudflare, IPNotify automates DNS updates and ensures your DNS records are always up-to-date. Keep yourself informed and stay on top of network changes with IPNotify.
 
 [![Go Version](https://img.shields.io/badge/Go-v1.16-blue)](https://golang.org/dl/)
 [![Go Report Card](https://goreportcard.com/badge/github.com/PxGo/IPNotify)](https://goreportcard.com/report/github.com/PxGo/IPNotify)
