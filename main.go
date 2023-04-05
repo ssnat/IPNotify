@@ -48,6 +48,13 @@ func main() {
 			return
 		}
 
+		err = lib.UpdateCloudflareRecords(ip)
+
+		if err != nil {
+			lib.Logger.Error(err)
+			return
+		}
+
 		originIP = ip
 
 		lib.Logger.Info("Scheduled task has completed.")

@@ -35,8 +35,21 @@ type IDNSPodConfig struct {
 	} `yaml:"records"`
 }
 
+type ICloudflareConfig struct {
+	Enabled  bool   `yaml:"enabled"`
+	APIToken string `yaml:"api_token"`
+	Records  []struct {
+		ZoneId     string `yaml:"zone_id"`
+		RecordId   string `yaml:"record_id"`
+		RecordName string `yaml:"record_name"`
+		RecordType string `yaml:"record_type"`
+		TTL        int    `yaml:"ttl"`
+	} `yaml:"records"`
+}
+
 type IDDNSConfig struct {
-	DNSPod IDNSPodConfig `yaml:"DNSPod"`
+	DNSPod     IDNSPodConfig     `yaml:"DNSPod"`
+	Cloudflare ICloudflareConfig `yaml:"Cloudflare"`
 }
 
 type IConfig struct {

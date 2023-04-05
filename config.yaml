@@ -58,3 +58,23 @@ DDNS:
         record_type: "A"
         record_line: "默认"
         ttl: 600
+  # Cloudflare is a DDNS provider that can be used to automatically update DNS records for a given domain and subdomain.
+  Cloudflare:
+    # Set "enabled" to true to enable DDNS with Cloudflare.
+    enabled: false
+    # "api_token" is the authentication token used to authenticate with the Cloudflare API.
+    api_token: "your api token"
+    # "records" is a list of DNS record information that needs to be updated.
+    records:
+      # Each record has the following fields:
+      # - "zone_id": The ID for the zone to update the DNS record for.
+      # - "record_id": The ID for the DNS record to update.
+      # - "record_name": The name of the DNS record to update.
+      # - "record_type": The type of the DNS record to update.
+      # - "ttl": The time-to-live (TTL) for the DNS record in seconds.
+      -
+        zone_id: "your zone id"
+        record_id: "your record id"
+        record_name: "www.example.com"
+        record_type: "A"
+        ttl: 1
