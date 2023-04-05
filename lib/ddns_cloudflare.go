@@ -26,7 +26,6 @@ func UpdateCloudflareRecords(ip string) error {
 	Logger.Info("Updating Cloudflare records ...")
 
 	for _, record := range config.DDNS.Cloudflare.Records {
-		fmt.Println(123)
 
 		url := "https://api.cloudflare.com/client/v4/zones/" + record.ZoneId + "/dns_records/" + record.RecordId
 
