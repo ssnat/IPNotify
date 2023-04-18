@@ -15,7 +15,7 @@ Usage
 
 ### Installation
 
-You can install IPNotify by compiling the source code, deploying it with Docker, or downloading the pre-compiled binary.
+You can install IPNotify by compiling the source code or downloading the pre-compiled binary.
 
 #### Compile from source code
 
