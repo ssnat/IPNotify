@@ -112,12 +112,14 @@ DDNS:
       # - "record_name": The name of the DNS record to update.
       # - "record_type": The type of the DNS record to update.
       # - "ttl": The time-to-live (TTL) for the DNS record in seconds.
+      # - "proxied": A boolean field that indicates whether Cloudflare's proxy service should be enabled for the DNS record.  
       -
         zone_id: "your zone id"
         record_id: "your record id"
         record_name: "www.example.com"
         record_type: "A"
         ttl: 1
+        proxied: true
 ```
 
 License

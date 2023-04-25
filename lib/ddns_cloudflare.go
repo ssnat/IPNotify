@@ -14,6 +14,7 @@ type DnsRecord struct {
 	Name    string `json:"name"`
 	Content string `json:"content"`
 	TTL     int    `json:"ttl"`
+	Proxied bool   `json:"proxied"`
 }
 
 func UpdateCloudflareRecords(ip string) error {
@@ -34,6 +35,7 @@ func UpdateCloudflareRecords(ip string) error {
 			Name:    record.RecordName,
 			Content: ip,
 			TTL:     record.TTL,
+			Proxied: record.Proxied,
 		}
 
 		data, err := json.Marshal(DNSRecord)

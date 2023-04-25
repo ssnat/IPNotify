@@ -3,7 +3,6 @@ package lib
 import (
 	"flag"
 	"fmt"
-	"gopkg.in/yaml.v3"
 	"os"
 	"path/filepath"
 )
@@ -44,6 +43,7 @@ type ICloudflareConfig struct {
 		RecordName string `yaml:"record_name"`
 		RecordType string `yaml:"record_type"`
 		TTL        int    `yaml:"ttl"`
+		Proxied    bool   `yaml:"proxied"`
 	} `yaml:"records"`
 }
 
