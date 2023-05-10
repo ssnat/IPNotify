@@ -20,7 +20,7 @@ type DnsRecord struct {
 func UpdateCloudflareRecords(ip string) error {
 	config := GetConfig()
 
-	if !config.DDNS.DNSPod.Enabled {
+	if !config.DDNS.Cloudflare.Enabled {
 		return nil
 	}
 
