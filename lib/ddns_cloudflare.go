@@ -59,7 +59,8 @@ func UpdateCloudflareRecords(ip string) error {
 		err = UpdateCloudflareRecord(req)
 
 		if err != nil {
-			return nil
+			Logger.Error(err)
+			continue
 		}
 
 		Logger.Info(fmt.Sprintf("Updated Cloudflare record: %s.%s - %s", record.ZoneId, record.RecordName, ip))
